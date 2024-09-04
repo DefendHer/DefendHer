@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Text Safety Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/styles.css"> <!-- You can add your custom CSS file here -->
+</head>
+
+<style>
+    body {
+        background-image: url('static/images/text.jpg');
+        background-size: cover;
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    textarea.form-control {
+        height: 20vh;
+        background-color: rgba(255, 255, 255, 0.5);
+        /* Adjust opacity (0.5 means 50% transparent white) */
+        border: 1px solid #ccc;
+        /* Add a border for clarity */
+        color: #333;
+        /* Text color */
+        padding: 10px;
+        /* Padding around the text area */
+    }
+
+</style>
+
+<body>
+
+    <div class="container">
+        <h1 class="mt-4">Text Safety Prediction</h1>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <textarea class="form-control" name="text" rows="16" placeholder="Enter your text here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

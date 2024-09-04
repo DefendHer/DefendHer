@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Location via SMS</title>
+</head>
+
+<body>
+    <h1>Send Your Location</h1>
+    <button id="sendSmsBtn">Send Location via SMS</button>
+    <p id="responseMessage"></p>
+
+    <script>
+        document.getElementById('sendSmsBtn').addEventListener('click', function () {
+            // Show loading text
+            document.getElementById('responseMessage').innerText = "Sending message...";
+
+            fetch('/send_location_sms', {
+                method: 'POST',
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        document.getElementById('responseMessage').innerText = "Message sent successfully!";
+                    } else {
+                        document.getElementById('responseMessage').innerText = "Failed to send message: " + data.message;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('responseMessage').innerText = "An error occurred: " + error;
+                });
+        });
+    </script>
+</body>
+
+</html>

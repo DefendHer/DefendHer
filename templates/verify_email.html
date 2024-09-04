@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .alert {
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            max-width: 400px;
+            text-align: center;
+            display: none;
+            /* Initially hidden */
+        }
+
+        .alert.success {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .alert.info {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .alert.error {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="alert {{ alert_type }}" id="alert-box">
+        <p>{{ message }}</p>
+    </div>
+
+    <script>
+        // Function to show the alert popup
+        function showAlert() {
+            var alertBox = document.getElementById('alert-box');
+            alertBox.style.display = 'block'; // Show the alert
+            setTimeout(function () {
+                alertBox.style.display = 'none'; // Hide after 5 seconds
+            }, 5000);
+        }
+
+        // Show the alert when the page loads
+        window.onload = function () {
+            showAlert();
+        };
+    </script>
+</body>
+
+</html>

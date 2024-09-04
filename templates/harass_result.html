@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<style>
+    /* General body styling */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url('/static/background.jpg');
+        /* Path to your background image */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #fff;
+        text-align: center;
+    }
+
+    /* Container styling */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        margin-top: 50px;
+    }
+
+    /* Header styling */
+    h1,
+    h2 {
+        color: #ffcc00;
+        margin-bottom: 20px;
+    }
+
+    /* Form styling */
+    form {
+        margin-bottom: 30px;
+    }
+
+    input[type="file"] {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #333;
+        color: #fff;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #ffcc00;
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #ff9900;
+    }
+
+    /* Image styling */
+    img {
+        margin-top: 20px;
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* Back link styling */
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #ffcc00;
+        color: #000;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+        background-color: #ff9900;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p>Prediction: {{ prediction }}</p>
+
+        <a href="{{ url_for('harass') }}">Go back</a>
+    </div>
+</body>
+
+</html>

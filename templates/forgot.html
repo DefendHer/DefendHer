@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #FF4B2B;
+            margin-bottom: 20px;
+        }
+
+        input[type=email],
+        button[type=submit] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type=submit] {
+            background-color: #FF4B2B;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type=submit]:hover {
+            background-color: #FF4B2B;
+        }
+
+        .custom-alert {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px;
+            background-color: #FF4B2B;
+            color: #FFF;
+            border-radius: 10px;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .custom-alert-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .custom-alert-message {
+            flex: 1;
+        }
+
+        .custom-alert-close {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <form id="forgotPasswordForm" action="/forgot_password" method="post">
+            <h1>Forgot Password</h1>
+            <input type="email" name="email" placeholder="Email" required>
+            <button type="submit">Send Reset Email</button>
+        </form>
+    </div>
+
+    <div id="customAlert" class="custom-alert">
+        <div class="custom-alert-content">
+            <div class="custom-alert-message" id="customAlertMessage"></div>
+            <div class="custom-alert-close" onclick="closeCustomAlert()">&#10006;</div>
+        </div>
+    </div>
+
+    <script>
+        function showCustomAlert(message, type) {
+            const alertBox = document.getElementById('customAlert');
+            const alertMessage = document.getElementById('customAlertMessage');
+            alertMessage.textContent = message;
+            alertBox.style.backgroundColor = type === 'success' ? 'rgba(40, 167, 69, 0.9)' : 'rgba(220, 20, 60, 0.9)';
+            alertBox.style.display = 'block';
+        }
+
+        function closeCustomAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+        }
+
+        document.getElementById('forgotPasswordForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .then(data => {
+                    showCustomAlert(data.message, data.status); // Assuming response JSON contains `message` and `status`
+                })
+                .catch(error => {
+                    showCustomAlert('An error occurred. Please try again.', 'error');
+                });
+        });
+    </script>
+</body>
+
+</html>

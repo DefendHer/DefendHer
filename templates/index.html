@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+  <title>Defend Her</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="static/css/fontawesome.css">
+  <link rel="stylesheet" href="static/css/templatemo-space-dynamic.css">
+  <link rel="stylesheet" href="static/css/animated.css">
+  <link rel="stylesheet" href="static/css/owl.css">
+
+  <link rel="stylesheet" href="static/css/footer.css">
+
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+    .main-red-button a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      margin-right: auto;
+    }
+
+    .user-info-button {
+      width: 40px;
+      height: 40px;
+      background-color: #FF4B2B;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    .user-dropdown {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 200px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      z-index: 1000;
+      padding: 10px;
+    }
+
+    .user-dropdown p {
+      margin: 0;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .user-dropdown p:last-child {
+      border-bottom: none;
+    }
+
+    .user-dropdown .logout-button {
+      width: 100%;
+      background-color: #FF4B2B;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .user-dropdown .logout-button:hover {
+      background-color: #e43a1c;
+    }
+
+    .login-link {
+      display: block;
+    }
+
+
+    /* styles.css */
+    #google_translate_element {
+      position: absolute;
+      bottom: 10px;
+      /* Adjust positioning as needed */
+      right: 50px;
+      /* Adjust positioning as needed */
+      z-index: 10;
+      /* Ensure it appears above other elements */
+
+
+
+
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .content h1,
+    .content h2,
+    .content p {
+      margin: 10px 0;
+    }
+
+    /* styles.css */
+
+    #upButton {
+      display: none;
+      /* Hide button by default */
+
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background-color: #fe3f40;
+
+      color: white;
+      border: 1px goldenrod groove;
+      /* border-radius: 0cm; */
+      /* Rounded shape */
+      padding: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 500;
+      /* Ensure it appears above other elements */
+    }
+
+    #upButton:hover {
+      background-color: rgb(243, 61, 91);
+      /* Darker blue on hover */
+    }
+
+
+
+
+    /* Service Dropdown Styles */
+    .service-info {
+      position: relative;
+      display: inline-block;
+    }
+
+    .service-info-button {
+      cursor: pointer;
+      color: #2a2a2a;
+
+      font-weight: 500;
+      margin-top: 9px;
+    }
+
+    .service-dropdown {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      margin-top: 30%;
+    }
+
+    .service-dropdown p {
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .service-dropdown p a {
+      color: #2a2a2a;
+      text-decoration: none;
+      font-weight: bolder;
+
+    }
+
+    .service-dropdown p:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* User Dropdown Styles (for consistency) */
+    .user-info {
+      position: relative;
+      display: inline-block;
+    }
+
+    .user-info-button {
+      cursor: pointer;
+    }
+
+    .user-dropdown {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .user-dropdown p {
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .user-dropdown button {
+      padding: 12px 16px;
+      border: none;
+      background: #f9f9f9;
+      cursor: pointer;
+    }
+
+    .user-dropdown button:hover {
+      background-color: #f1f1f1;
+    }
+
+
+    .our-services .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .our-services .feature-item .icon {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .our-services .feature-item .icon img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .our-services .feature-item .feature-content {
+      flex-grow: 1;
+    }
+
+    .our-services .feature-item .feature-content h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .our-services .feature-item .feature-content p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .user-info-button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #FF4B2B;
+      /* Circle background color */
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-right: 15px;
+      cursor: pointer;
+      /* Pointer cursor to indicate clickable */
+    }
+
+    .user-dropdown {
+      display: none;
+      position: absolute;
+      background: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .user-info-button:hover .user-dropdown {
+      display: block;
+    }
+
+    .logout-button {
+      background-color: #FF4B2B;
+      /* Bootstrap danger color */
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .logout-button:hover {
+      background-color: #FF4B2B;
+      /* Darker red for hover */
+    }
+
+
+    .main-button {
+      background-color: #03a4ed;
+      color: #fff;
+      /* White text for better contrast */
+      padding: 10px 20px;
+      /* Add some padding for better appearance */
+      text-decoration: none;
+      /* Remove underline from the link */
+      border-radius: 5px;
+      /* Rounded corners */
+      font-weight: bold;
+      /* Make text bold */
+      display: inline-block;
+      /* Ensure proper alignment */
+      border-radius: 80px;
+    }
+
+    .main-button:hover {
+      background-color: #0283c0;
+      color: #fff;
+      /* Darker blue for hover effect */
+    }
+
+    .service-dropdown {
+      display: none;
+      /* Add other styling as needed */
+    }
+
+    .service-dropdown.show {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ** Logo Start ** -->
+            <a href="/" class="logo">
+              <h4>Defend<span>Her</span></h4>
+            </a>
+            <!-- ** Logo End ** -->
+
+            <!-- ** Menu Start ** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="{{ url_for('about') }}">About Us</a></li>
+              <li id="emergencyServices" class="service-info">
+                <div id="emergencyServicesIcon" class="service-info-button" onclick="toggleEmergencyServicesDropdown()">
+                  Emergency Services</div>
+                <div id="emergencyServicesDropdown" class="service-dropdown">
+                  <p><a href="{{ url_for('map') }}">Safe Zones</a></p>
+                  <p><a href="{{ url_for('alert') }}">SOS Alert</a></p>
+                </div>
+              </li>
+              <li id="serviceInfo" class="service-info">
+                <div id="serviceIcon" class="service-info-button" onclick="toggleServiceDropdown()">Services</div>
+                <div id="serviceDropdown" class="service-dropdown">
+                  <p><a href="{{ url_for('face') }}">Face Sense</a></p>
+                  <p><a href="{{ url_for('texts') }}">Text Shield</a></p>
+                  <p><a href="{{ url_for('support') }}">Get Help</a></p>
+                  <p><a href="{{ url_for('harass') }}">Safe Guard</a></p>
+                </div>
+              </li>
+              <li class="scroll-to-section"><a href="{{ url_for('video') }}">Protect Yourself</a></li>
+              <li class="scroll-to-section"><a href="{{ url_for('contact') }}">Reach Us</a></li>
+              <li class="scroll-to-section"><a href="{{ url_for('faq') }}">FAQ's</a></li>
+              <li id="loginTab" class="scroll-to-section"><a href="{{ url_for('login') }}">Login</a></li>
+              <li id="userInfo" class="user-info">
+                <div class="user-info-button" onclick="toggleDropdown()">
+                  <span id="userInitial"></span>
+                </div>
+                <div id="userDropdown" class="user-dropdown">
+                  <p id="userName"></p>
+                  <p id="userEmail"></p>
+                  <button class="logout-button" onclick="logout()">Logout</button>
+                </div>
+
+              </li>
+
+              
+            </ul>
+
+
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ** Menu End ** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <h6>WELCOME TO SAFETY FIRST </h6>
+                <h2> We Empower<em>Women </em> & <span>Enhance</span> Safety</h2>
+                <p>Women's empowerment thrives on embracing diversity in all its forms—cultural, socioeconomic, and
+                  beyond. By celebrating
+                  diverse perspectives, advocating for inclusive policies, and amplifying marginalized voices, we ensure
+                  that empowerment
+                  efforts are inclusive and impactful, empowering women from all walks of life.
+                </p>
+                <p><a href="{{ url_for('chat') }}" class="main-button">Chat with Us</a></p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="static/images/image.png" alt="team meeting">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="static/images/file.png" alt="person graphic" class="responsive-img">
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12 align-self-center">
+          <div class="services">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="icon">
+                    <img src="static/images/service-icon-01.png" alt="Community Awareness">
+                  </div>
+                  <div class="right-text">
+                    <h4>Community Awareness</h4>
+                    <p>Raising awareness and promoting safety practices</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+                  <div class="icon">
+                    <img src="static/images/service-icon-02.png" alt="Emergency Assistance">
+                  </div>
+                  <div class="right-text">
+                    <h4>Emergency Assistance</h4>
+                    <p>Quick access to emergency services and assistance.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">
+                  <div class="icon">
+                    <img src="static/images/service-icon-03.png" alt="Safety Education">
+                  </div>
+                  <div class="right-text">
+                    <h4>Safety Education Program</h4>
+                    <p>Educational programs on safety and self-defense</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="1.1s">
+                  <div class="icon">
+                    <img src="static/images/service-icon-04.png" alt="Support Network">
+                  </div>
+                  <div class="right-text">
+                    <h4>Supportive Network</h4>
+                    <p>Support network for victims and legal assistance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div id="services" class="our-services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="left-image">
+            <img src="static/images/6066831.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="section-heading">
+            <h2>Enhance Safety with our <em>Rape Prevention</em> services &amp; <span>Support</span>
+              Programs</h2>
+            <p>Our platform is dedicated to preventing rape and supporting survivors. We provide essential
+              resources and
+              tools to help you stay safe and informed. Contact us for more information and support.</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="feature-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="icon">
+                  <img src="static/images/service-icon-01.png" alt="Community Awareness">
+                </div>
+                <div class="feature-content">
+                  <h4>Domestic Violence Awareness</h4>
+                  <p>Raise awareness about domestic violence prevention and support for survivors.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="feature-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div class="icon">
+                  <img src="static/images/service-icon-02.png" alt="Emergency Assistance">
+                </div>
+                <div class="feature-content">
+                  <h4>Mental Health Support</h4>
+                  <p>Promote mental health awareness and reduce stigma surrounding mental illness.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="feature-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div class="icon">
+                  <img src="static/images/service-icon-03.png" alt="Safety Education">
+                </div>
+                <div class="feature-content">
+                  <h4>Elderly Care and Safety</h4>
+                  <p>Provide resources on elder abuse prevention and support for caregivers.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="feature-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div class="icon">
+                  <img src="static/images/service-icon-04.png" alt="Support Network">
+                </div>
+                <div class="feature-content">
+                  <h4>Cybersecurity Awareness</h4>
+                  <p>Educate community members on online safety, identity theft prevention, and
+                    cybersecurity best
+                    practices.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="feature-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+                <div class="icon">
+                  <img src="static/images/service-icon-04.png" alt="Real-Time Alerts">
+                </div>
+                <div class="feature-content">
+                  <h4>Real-Time Alerts</h4>
+                  <p>Receive real-time alerts about safety concerns and incidents in your area.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="feature-item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                <div class="icon">
+                  <img src="static/images/service-icon-03.png" alt="Safe Zones">
+                </div>
+                <div class="feature-content">
+                  <h4>Safe Zones</h4>
+                  <p>Identify and locate designated safe zones where you can seek refuge if needed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="portfolio" class="our-portfolio section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading  wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <h2> Explore Our Rape<em> Prevention</em> &amp;Efforts & <span> Safety Services</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+              <div class="hidden-content">
+                <h4>Empowering Safety</h4>
+                <p> Explore Rape Prevention Services.</p>
+              </div>
+              <div class="showed-content">
+                <img src="static/images/imgs1.jpg" alt="">
+
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class=" col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+              <div class="hidden-content">
+                <h4>Take Control</h4>
+                <p>Learn About Rape Prevention & Safety</p>
+              </div>
+              <div class="showed-content">
+                <img src="static/images/imgs2.jpg" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+              <div class="hidden-content">
+                <h4>You Are Not Alone</h4>
+                <p> Get Help & Support After Sexual Assault</p>
+              </div>
+              <div class="showed-content">
+                <img src="static/images/imgs3.jpg" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+              <div class="hidden-content">
+                <h4>Be Prepared</h4>
+                <p>This conveys the importance of proactive action for safety.</p>
+              </div>
+              <div class="showed-content">
+                <img src="static/images/imgs4.jpg" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="blog" class="our-blog section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="section-heading">
+            <h2>Empower <em> Your</em> self <span> Learn More </span></h2>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="top-dec">
+            <!-- <img src="static/images/blog-dec.png" alt=""> -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="left-image">
+            <a href="#"><img src="static/images/imgg1.jpg" alt="Workspace Desktop"></a>
+            <div class="info">
+              <div class="inner-content">
+                <ul>
+                  <li><i class="fa fa-calendar"></i>24 Mar 2021</li>
+                  <li><i class="fa fa-users"></i>Focus on Your Mission</li>
+                  <li><i class="fa fa-folder"></i>Empowering Safety</li>
+                </ul>
+                <a href="{{ url_for('fourth') }}">
+                  <h4>We Believe in a World &amp; Free From Sexual Violence</h4>
+                </a>
+                <p> We offer confidential support for survivors, resources for prevention, and
+                  information on building a
+                  culture of consent Together, we can create a safer future for all.</p>
+                <!-- <div class="main-blue-button">
+                  <a href="#">Discover More</a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="right-list">
+            <ul>
+              <li>
+                <div class="left-content align-self-center">
+                  <!-- <span><i class="fa fa-calendar"></i> 18 Mar 2021</span> -->
+
+                  <a href="{{ url_for('first') }}">
+                    <h4> Empowerment and &amp; bystander intervention</h4>
+                  </a>
+                  <p> The emphasis has shifted from solely victim-blaming strategies ("don't walk alone
+                    at night") to
+                    teaching people how to be safe and empowered in various situations.</p>
+                </div>
+                <div class="right-image">
+                  <a href="{{ url_for('first') }}"><img src="static/images/imgg2.jpg" alt=""></a>
+                </div>
+              </li>
+              <li>
+                <div class="left-content align-self-center">
+                  <!-- <span><i class="fa fa-calendar"></i> 14 Mar 2021</span> -->
+                  <a href="{{ url_for('second') }}">
+                    <h4>Trauma &amp; -informed approach</h4>
+                  </a>
+                  <p> Websites are more sensitive to the needs of survivors. They offer resources and
+                    support services
+                    focused on healing and recovery.</p>
+                </div>
+                <div class="right-image">
+                  <a href="{{ url_for('second') }}"><img src="static/images/img.jpg" alt=""></a>
+                </div>
+              </li>
+              <li>
+                <div class="left-content align-self-center">
+                  <!-- <span><i class="fa fa-calendar"></i> 06 Mar 2021</span> -->
+                  <a href="{{ url_for('third') }}">
+                    <h4>Self &amp;-defense training</h4>
+                  </a>
+                  <p>Explore effective strategies for personal safety and bystander intervention.</p>
+                </div>
+                <div class="right-image">
+                  <a href="{{ url_for('third') }}"><img src="static/images/imgg4.jpg" alt=""></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <div class="section-heading">
+            <h2>Confidential Support for Survivors and Concerned Individuals</h2>
+            <p>If you or someone you know has been affected by sexual assault, we are here to help. Find
+              confidential
+              support, resources, and information on our website</p>
+            <div class="phone-info">
+              <h4>For any enquiry, Call Us: <span><i class="fa fa-phone"></i> <a href="#">010-020-0340</a></span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
+
+          <form id="contact" action="/send_message" method="post">
+            <div class="row">
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <textarea name="message" id="message" placeholder="Message" required></textarea>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="main-button">Send Message</button>
+                </fieldset>
+              </div>
+            </div>
+            <div class="contact-dec">
+              <img src="static/images/contact-decoration.png" alt="">
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="upButton" title="Go to top">↑</button>
+
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-content pt-5 pb-5">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 mb-50">
+            <div class="footer-widget">
+              <div class="footer-logo">
+                <a href="/">
+                  <img src="https://i.postimg.cc/8kdzwwx4/pngwing-com.png" class="img-fluid" alt="logo"
+                    style="height: 75px;">
+                </a>
+              </div>
+              <div class="footer-text">
+                <p>Empowering women is essential for creating a just and equitable society
+                  By fostering opportunities and breaking down barriers, we enable women to reach their full potential.
+                </p>
+              </div>
+              <div class="footer-social-icon">
+                <span>Follow us</span>
+                <a href="#"><i class="fa fa-facebook-f facebook-bg"></i></a>
+                <a href="#"><i class="fa fa-twitter twitter-bg"></i></a>
+                <a href="#"><i class="fa fa-google-plus google-bg"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+            <div class="footer-widget">
+              <div class="footer-widget-heading">
+                <h3>Useful Links</h3>
+              </div>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About us</a></li>
+                <li><a href="/video">Protect Yourself</a></li>
+                <li><a href="/faq">FAQ's</a></li>
+                <li><a href="/contact">Contact us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+            <div class="footer-widget">
+              <div class="footer-widget-heading">
+                <h3>Subscribe</h3>
+              </div>
+              <div class="footer-text mb-25">
+                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+              </div>
+              <div class="subscribe-form">
+                <form action="#">
+                  <input type="text" placeholder="Email Address">
+                  <button><i class="fa fa-telegram"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer-bottom end -->
+
+  <!-- Start of Async Drift Code -->
+  <script>
+    "use strict";
+    !function () {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+          t.factory = function (e) {
+            return function () {
+              var n = Array.prototype.slice.call(arguments);
+              return n.unshift(e), t.push(n), t;
+            };
+          }, t.methods.forEach(function (e) {
+            t[e] = t.factory(e);
+          }), t.load = function (t) {
+            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+          };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('avx335ne6ezs');
+  </script>
+  <!-- End of Async Drift Code -->
+
+  <!-- Scripts -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/js/owl-carousel.js"></script>
+  <script src="static/js/animation.js"></script>
+  <script src="static/js/imagesloaded.js"></script>
+  <script src="static/js/templatemo-custom.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const token = localStorage.getItem('token');
+      if (token) {
+        // Show user info and services
+        document.getElementById('loginTab').style.display = 'none';
+        document.getElementById('userInfo').style.display = 'flex';
+        document.getElementById('emergencyServices').style.display = 'flex';
+        document.getElementById('serviceInfo').style.display = 'flex';
+
+        const userName = localStorage.getItem('userName');
+        const userEmail = localStorage.getItem('userEmail');
+
+        document.getElementById('userInitial').textContent = userName ? userName.charAt(0).toUpperCase() : '';
+        document.getElementById('userName').textContent = userName || '';
+        document.getElementById('userEmail').textContent = userEmail || '';
+      } else {
+        // Hide user info and services
+        document.getElementById('loginTab').style.display = 'block';
+        document.getElementById('userInfo').style.display = 'none';
+        document.getElementById('emergencyServices').style.display = 'none';
+        document.getElementById('serviceInfo').style.display = 'none';
+      }
+    });
+  </script>
+
+
+  <script>
+    async function fetchUserDetails() {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        document.getElementById('loginLink').style.display = 'block'; // Show login link
+        document.getElementById('userInfo').style.display = 'none'; // Hide user info
+        return;
+      }
+
+      try {
+        const response = await fetch('/user-details', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch user details');
+        }
+
+        const user = await response.json();
+        document.getElementById('userName').textContent = `Name: ${user.name}`;
+        document.getElementById('userEmail').textContent = `Email: ${user.email}`;
+        document.getElementById('userInitial').textContent = user.name.charAt(0).toUpperCase(); // Set the initial letter
+        document.getElementById('loginLink').style.display = 'none'; // Hide login link
+        document.getElementById('userInfo').style.display = 'flex'; // Show user info
+      } catch (error) {
+        console.error('Error fetching user details:', error);
+        document.getElementById('loginLink').style.display = 'block'; // Show login link
+        document.getElementById('userInfo').style.display = 'none'; // Hide user info
+      }
+    }
+
+
+
+    function toggleDropdown() {
+      const dropdown = document.getElementById('userDropdown');
+      const isVisible = dropdown.style.display === 'block';
+      dropdown.style.display = isVisible ? 'none' : 'block';
+    }
+
+    function toggleServiceDropdown() {
+      var dropdown = document.getElementById('serviceDropdown');
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', async function (event) {
+      event.preventDefault();  // Prevent the default form submission
+
+      // Get form data
+      const formData = new FormData(this);
+
+      // Create an object from the form data
+      const formObject = {};
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+
+      // Send the form data using fetch
+      try {
+        const response = await fetch('/send_message', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formObject)
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+          showSuccessMessage(result.message);
+        } else {
+          showErrorMessage(result.error);
+        }
+      } catch (error) {
+        showErrorMessage(`An unexpected error occurred: ${error.message}`);
+      }
+    });
+
+    function showSuccessMessage(message) {
+      const messageContainer = document.getElementById('message-container');
+      messageContainer.innerHTML = `<div class="alert alert-success">${message}</div>`;
+    }
+
+    function showErrorMessage(message) {
+      const messageContainer = document.getElementById('message-container');
+      messageContainer.innerHTML = `<div class="alert alert-danger">${message}</div>`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('success') && params.get('success') === 'true') {
+        showSuccessMessage();
+      }
+    });
+
+    function showSuccessMessage() {
+      const alertContainer = document.getElementById('alert-container');
+      const alertDiv = document.createElement('div');
+      alertDiv.classList.add('alert', 'alert-success');
+      alertDiv.textContent = 'Message sent successfully!';
+      alertContainer.appendChild(alertDiv);
+
+      // Optionally, remove the alert after a few seconds
+      setTimeout(function () {
+        alertDiv.remove();
+      }, 5000); // Remove after 5 seconds
+    }
+
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("upButton").style.display = "block";
+      } else {
+        document.getElementById("upButton").style.display = "none";
+      }
+    }
+
+    document.getElementById("upButton").onclick = function () {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    };
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+
+    fetchUserDetails(); // Fetch user details on page load
+
+
+  </script>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,hi,bn,te,mr,ta,gu,kn,ml,pa', // Include the desired languages
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript"
+src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <div id="google_translate_element"></div>
+  
+  <script>
+    async function fetchUserDetails() {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        document.getElementById('loginLink').style.display = 'block'; // Show login link
+        document.getElementById('userInfo').style.display = 'none'; // Hide user info
+        return;
+      }
+
+      try {
+        const response = await fetch('/user-details', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch user details');
+        }
+
+        const user = await response.json();
+        document.getElementById('userName').textContent = `Name: ${user.name}`;
+        document.getElementById('userEmail').textContent = `Email: ${user.email}`;
+
+        // Set the user's initials
+        const initials = user.name.split(' ').map(name => name.charAt(0)).join('').toUpperCase();
+        document.getElementById('userInitial').textContent = initials;
+
+        document.getElementById('loginLink').style.display = 'none'; // Hide login link
+        document.getElementById('userInfo').style.display = 'flex'; // Show user info
+      } catch (error) {
+        console.error('Error fetching user details:', error);
+        document.getElementById('loginLink').style.display = 'block'; // Show login link
+        document.getElementById('userInfo').style.display = 'none'; // Hide user info
+      }
+    }
+
+    fetchUserDetails(); // Fetch user details on page load
+
+
+
+
+  </script>
+
+
+  <script>
+    async function logout() {
+      try {
+        // Perform the logout request
+        await fetch('/logout', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
+
+        // Remove the token from localStorage
+        localStorage.removeItem('token');
+
+        // Remove the userInfo div from the DOM
+        const userInfo = document.getElementById('userInfo');
+        if (userInfo) {
+          userInfo.parentNode.removeChild(userInfo); // Remove the userInfo element
+        }
+
+        // Redirect to login page
+        window.location.href = '/'; // Redirect to login page
+      } catch (error) {
+        console.error('Error during logout:', error);
+      }
+    }
+
+    function toggleEmergencyServicesDropdown() {
+      const dropdown = document.getElementById("emergencyServicesDropdown");
+      if (dropdown) {
+        console.log("Emergency Services dropdown found:", dropdown);
+        dropdown.classList.toggle("show");
+      } else {
+        console.error("Emergency Services dropdown not found");
+      }
+    }
+  </script>
+
+  <script>
+    // Function to check login status and update the UI
+    function checkLoginStatus() {
+      const token = localStorage.getItem('token');
+
+      if (token) {
+        document.getElementById('loginTab').style.display = 'none';
+        document.getElementById('userInfo').style.display = 'block';
+      } else {
+        document.getElementById('loginTab').style.display = 'block';
+        document.getElementById('userInfo').style.display = 'none';
+      }
+    }
+
+    // Call this function when the page loads
+    window.onload = checkLoginStatus;
+
+    // Function to handle logout
+    function logout() {
+      // Clear the stored token
+      localStorage.removeItem('token');
+
+      // Optionally, clear other user information
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userEmail');
+
+      // Redirect to the index page
+      window.location.href = '/';
+    }
+  </script>
+
+</body>
+
+</html>

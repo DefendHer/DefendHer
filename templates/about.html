@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Women Empowerment Initiative</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style_about.css">
+
+    <!-- Bootstrap core CSS -->
+     <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+     <link rel="stylesheet" href="static/css/fontawesome.css">
+     <link rel="stylesheet" href="static/css/templatemo-space-dynamic.css">
+     <link rel="stylesheet" href="static/css/animated.css">
+     <link rel="stylesheet" href="static/css/owl.css">
+     <link rel="stylesheet" href="static/css/footer.css">
+
+  <style>
+     .service-dropdown {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      margin-top: 30%;
+    }
+    .main-red-button a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      margin-right: auto;
+    }
+
+    .user-info-button {
+      width: 40px;
+      height: 40px;
+      background-color: #FF4B2B;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    .user-dropdown {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 200px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      z-index: 1000;
+      padding: 10px;
+    }
+
+    .user-dropdown p {
+      margin: 0;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .user-dropdown p:last-child {
+      border-bottom: none;
+    }
+
+    .user-dropdown .logout-button {
+      width: 100%;
+      background-color: #FF4B2B;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .user-dropdown .logout-button:hover {
+      background-color: #e43a1c;
+    }
+
+    .login-link {
+      display: block;
+    }
+
+
+    /* styles.css */
+    #google_translate_element {
+      position: absolute;
+      bottom: 10px;
+      /* Adjust positioning as needed */
+      right: 50px;
+      /* Adjust positioning as needed */
+      z-index: 10;
+      /* Ensure it appears above other elements */
+
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .content h1,
+    .content h2,
+    .content p {
+      margin: 10px 0;
+    }
+
+    /* styles.css */
+
+    #upButton {
+      display: none;
+      /* Hide button by default */
+
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background-color: #fe3f40;
+
+      color: white;
+      border: 1px goldenrod groove;
+      /* border-radius: 0cm; */
+      /* Rounded shape */
+      padding: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 500;
+      /* Ensure it appears above other elements */
+    }
+
+    #upButton:hover {
+      background-color: rgb(243, 61, 91);
+      /* Darker blue on hover */
+    }
+
+
+
+
+    /* Service Dropdown Styles */
+    .service-info {
+      position: relative;
+      display: inline-block;
+    }
+
+    .service-info-button {
+      cursor: pointer;
+      color: #2a2a2a;
+
+      font-weight: 500;
+      margin-top: 9px;
+    }
+
+    .service-dropdown {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .service-dropdown p {
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .service-dropdown p a {
+      color: #2a2a2a;
+      text-decoration: none;
+      font-weight: bolder;
+
+    }
+
+    .service-dropdown p:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* User Dropdown Styles (for consistency) */
+    .user-info {
+      position: relative;
+      display: inline-block;
+    }
+
+    .user-info-button {
+      cursor: pointer;
+    }
+
+    .user-dropdown {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .user-dropdown p {
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .user-dropdown button {
+      padding: 12px 16px;
+      border: none;
+      background: #f9f9f9;
+      cursor: pointer;
+    }
+
+    .user-dropdown button:hover {
+      background-color: #f1f1f1;
+    }
+
+
+    .our-services .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .our-services .feature-item .icon {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .our-services .feature-item .icon img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .our-services .feature-item .feature-content {
+      flex-grow: 1;
+    }
+
+    .our-services .feature-item .feature-content h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .our-services .feature-item .feature-content p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .user-info-button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #FF4B2B;
+      /* Circle background color */
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin-right: 15px;
+      cursor: pointer;
+      /* Pointer cursor to indicate clickable */
+    }
+
+    .user-dropdown {
+      display: none;
+      position: absolute;
+      background: white;
+      border: 1px solid #ddd;
+      padding: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .user-info-button:hover .user-dropdown {
+      display: block;
+    }
+
+    .logout-button {
+      background-color: #FF4B2B;
+      /* Bootstrap danger color */
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .logout-button:hover {
+      background-color: #FF4B2B;
+      /* Darker red for hover */
+    }
+
+
+    .main-button {
+      background-color: #03a4ed;
+      color: #fff;
+      /* White text for better contrast */
+      padding: 10px 20px;
+      /* Add some padding for better appearance */
+      text-decoration: none;
+      /* Remove underline from the link */
+      border-radius: 5px;
+      /* Rounded corners */
+      font-weight: bold;
+      /* Make text bold */
+      display: inline-block;
+      /* Ensure proper alignment */
+      border-radius: 80px;
+    }
+
+    .main-button:hover {
+      background-color: #0283c0;
+      color: #fff;
+      /* Darker blue for hover effect */
+    }
+
+
+
+
+    .service-dropdown {
+      display: none;
+      /* Add other styling as needed */
+    }
+
+    .service-dropdown.show {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+    
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ** Logo Start ** -->
+            <a href="/" class="logo">
+              <h4>Defend<span>Her</span></h4>
+            </a>
+            <!-- ** Logo End ** -->
+
+            <!-- ** Menu Start ** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="{{ url_for('about') }}">About Us</a></li>
+              <li id="emergencyServices" class="service-info">
+                <div id="emergencyServicesIcon" class="service-info-button" onclick="toggleEmergencyServicesDropdown()">
+                  Emergency Services</div>
+                <div id="emergencyServicesDropdown" class="service-dropdown">
+                  <p><a href="{{ url_for('map') }}">Safe Zones</a></p>
+                  <p><a href="{{ url_for('alert') }}">SOS Alert</a></p>
+                </div>
+              </li>
+              <li id="serviceInfo" class="service-info">
+                <div id="serviceIcon" class="service-info-button" onclick="toggleServiceDropdown()">Services</div>
+                <div id="serviceDropdown" class="service-dropdown">
+                  <p><a href="{{ url_for('face') }}">Face Sense</a></p>
+                  <p><a href="{{ url_for('texts') }}">Text Shield</a></p>
+                  <p><a href="{{ url_for('support') }}">Get Help</a></p>
+                  <p><a href="{{ url_for('sms') }}">SMS Alert</a></p>
+                </div>
+              </li>
+              <li class="scroll-to-section"><a href="{{ url_for('video') }}">Protect Yourself</a></li>
+              <li class="scroll-to-section"><a href="{{ url_for('contact') }}">Reach Us</a></li>
+              <li class="scroll-to-section"><a href="{{ url_for('faq') }}">FAQ's</a></li>
+              <li id="loginTab" class="scroll-to-section"><a href="{{ url_for('login') }}">Login</a></li>
+              <li id="userInfo" class="user-info">
+                <div class="user-info-button" onclick="toggleDropdown()">
+                  <span id="userInitial"></span>
+                </div>
+                <div id="userDropdown" class="user-dropdown">
+                  <p id="userName"></p>
+                  <p id="userEmail"></p>
+                  <button class="logout-button" onclick="logout()">Logout</button>
+                </div>
+              </li>
+            </ul>
+
+
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ** Menu End ** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ***** Header Area End ***** -->
+    
+    <div class="container"><br><br>
+        <!-- Who We Are Section -->
+        <div class="row section align-items-center">
+            <div class="col-md-6">
+                <img src="static/images/8.jpg" alt="Who We Are" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6 left-content header-text wow" data-wow-duration="1s" data-wow-delay="1s">
+                <h2 class="text-primary mb-4">Who We Are</h2>
+                <p>Our organization is built on the values of integrity, innovation, and inclusivity. We believe in
+                    leveraging our collective expertise and resources to make a tangible impact on women’s lives.
+                    Through advocacy, education, and support services, we strive to empower women to overcome challenges
+                    and achieve their fullest potential.</p>
+                <p>We are a diverse team of professionals, activists, and volunteers dedicated to driving positive
+                    change. Our work is guided by the principles of equity and justice, ensuring that our programs and
+                    services reach those who need them the most. By fostering a supportive community, we aim to break
+                    down barriers and create opportunities for women to thrive.</p>
+                <p>Our team collaborates with local, national, and international partners to amplify our impact and
+                    promote a global dialogue on women's issues. We are committed to continuous learning and
+                    improvement, always seeking innovative solutions to address the evolving needs of the communities we
+                    serve.</p>
+            </div>
+        </div>
+
+        <!-- Our Mission Section -->
+        <div class="row section align-items-center">
+            <div class="col-md-6 order-md-2">
+                <img src="static/images/10.jpg" alt="Our Mission" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h2 class="text-primary mb-4">Our Mission</h2>
+                <p>Our mission is to provide support, resources, and advocacy for women who are at risk or have
+                    experienced violence. We aim to raise awareness about the issues faced by women and work towards
+                    effective solutions that promote safety and empowerment.</p>
+                <p>We are committed to working with communities, policymakers, and other organizations to develop and
+                    implement strategies that address gender-based violence and discrimination. Our goal is to create a
+                    world where every woman feels safe, valued, and empowered to pursue her dreams.</p>
+                <p>Through our programs, we seek to provide a safe space for women to share their experiences and access
+                    the support they need. We believe in empowering women to be leaders in their own lives and in their
+                    communities, fostering resilience and self-confidence.</p>
+                <p>By advocating for systemic change and promoting gender equality, we strive to build a society where
+                    women are not only protected but also celebrated. Our mission extends beyond immediate support,
+                    aiming to create lasting, positive change in the lives of women everywhere.</p>
+            </div>
+        </div>
+
+        <!-- How We Can Help Section -->
+        <div class="row section align-items-center">
+            <div class="col-md-6">
+                <div class="how-we-can-help-text">
+                    <h2 class="text-primary mb-4">How We Can Help</h2>
+                    <p>We offer a range of services and support systems to assist women in need:</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Emergency Support:</strong> Immediate assistance through our helplines and crisis
+                            intervention services. Our team is available 24/7 to provide urgent support and guidance in
+                            critical situations.</li>
+                        <li><strong>Counseling and Therapy:</strong> Professional counseling services to help women cope
+                            with trauma and build resilience. We offer individual and group therapy sessions tailored to
+                            meet the specific needs of survivors.</li>
+                        <li><strong>Legal Assistance:</strong> Legal support and advocacy to navigate the justice system
+                            and ensure victims' rights are upheld. Our legal experts assist with filing reports,
+                            obtaining restraining orders, and representing victims in court.</li>
+                        <li><strong>Educational Programs:</strong> Workshops and training on self-defense, legal rights,
+                            and personal empowerment. We provide practical skills and knowledge to help women protect
+                            themselves and understand their rights.</li>
+                        <li><strong>Community Outreach:</strong> Awareness campaigns and partnerships with local
+                            organizations to create safer communities. We work to raise awareness about women's safety
+                            issues and collaborate with community leaders to foster a supportive environment.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="static/images/5.jpg" alt="How We Can Help" class="img-fluid rounded shadow">
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <h2 class="text-center text-primary mb-4">Meet Our Team</h2>
+        <div class="row section">
+            <!-- Team Member 1 -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card team-card">
+                    <div class="card-img-top" style="background-image: url('static/images/yash.png');"></div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Yash Lakhan</h5>
+                        <p class="card-text">Founder & CEO</p>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="https://www.facebook.com/yourprofile"
+                                    target="_blank"><img src="static/images/facebook.png" class="icon"
+                                        alt="Facebook"></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/yourprofile" target="_blank"><img
+                                        src="static/images/twitter.png" class="icon" alt="Twitter"></a></li>
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/yourprofile"
+                                    target="_blank"><img src="static/images/linkdin.png" class="icon"
+                                        alt="LinkedIn"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card team-card">
+                    <div class="card-img-top" style="background-image: url('static/images/nitin.jpeg');"></div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Nitin Punia</h5>
+                        <p class="card-text">Founder & CEO</p>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="https://www.facebook.com/yourprofile"
+                                    target="_blank"><img src="static/images/facebook.png" class="icon"
+                                        alt="Facebook"></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/yourprofile" target="_blank"><img
+                                        src="static/images/twitter.png" class="icon" alt="Twitter"></a></li>
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/yourprofile"
+                                    target="_blank"><img src="static/images/linkdin.png" class="icon"
+                                        alt="LinkedIn"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card team-card">
+                    <div class="card-img-top" style="background-image: url('static/images/manjeet.jpeg');"></div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Manjeet Jangra</h5>
+                        <p class="card-text">Founder & CEO</p>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="https://www.facebook.com/yourprofile"
+                                    target="_blank"><img src="static/images/facebook.png" class="icon"
+                                        alt="Facebook"></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/yourprofile" target="_blank"><img
+                                        src="static/images/twitter.png" class="icon" alt="Twitter"></a></li>
+                            <li class="list-inline-item"><a href="https://www.linkedin.com/in/yourprofile"
+                                    target="_blank"><img src="static/images/linkdin.png" class="icon"
+                                        alt="LinkedIn"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer-section">
+      <div class="container">
+        <div class="footer-content pt-5 pb-5">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4 mb-50">
+              <div class="footer-widget">
+                <div class="footer-logo">
+                  <a href="/">
+                    <img src="https://i.postimg.cc/8kdzwwx4/pngwing-com.png" class="img-fluid" alt="logo"
+                      style="height: 75px;">
+                  </a>
+                </div>
+                <div class="footer-text">
+                  <p>Empowering women is essential for creating a just and equitable society
+                    By fostering opportunities and breaking down barriers, we enable women to reach their full potential.
+                  </p>
+                </div>
+                <div class="footer-social-icon">
+                  <span>Follow us</span>
+                  <a href="#"><i class="fa fa-facebook-f facebook-bg"></i></a>
+                  <a href="#"><i class="fa fa-twitter twitter-bg"></i></a>
+                  <a href="#"><i class="fa fa-google-plus google-bg"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+              <div class="footer-widget">
+                <div class="footer-widget-heading">
+                  <h3>Useful Links</h3>
+                </div>
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about">About us</a></li>
+                  <li><a href="/video">Protect Yourself</a></li>
+                  <li><a href="/faq">FAQ's</a></li>
+                  <li><a href="/contact">Contact us</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+              <div class="footer-widget">
+                <div class="footer-widget-heading">
+                  <h3>Subscribe</h3>
+                </div>
+                <div class="footer-text mb-25">
+                  <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                </div>
+                <div class="subscribe-form">
+                  <form action="#">
+                    <input type="text" placeholder="Email Address">
+                    <button><i class="fa fa-telegram"></i></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer-bottom end -->
+    
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+  <!-- Scripts -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/js/owl-carousel.js"></script>
+  <script src="static/js/animation.js"></script>
+  <script src="static/js/imagesloaded.js"></script>
+  <script src="static/js/templatemo-custom.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const token = localStorage.getItem('token');
+      if (token) {
+        // Show user info and services
+        document.getElementById('loginTab').style.display = 'none';
+        document.getElementById('userInfo').style.display = 'flex';
+        document.getElementById('emergencyServices').style.display = 'flex';
+        document.getElementById('serviceInfo').style.display = 'flex';
+
+        const userName = localStorage.getItem('userName');
+        const userEmail = localStorage.getItem('userEmail');
+
+        document.getElementById('userInitial').textContent = userName ? userName.charAt(0).toUpperCase() : '';
+        document.getElementById('userName').textContent = userName || '';
+        document.getElementById('userEmail').textContent = userEmail || '';
+      } else {
+        // Hide user info and services
+        document.getElementById('loginTab').style.display = 'block';
+        document.getElementById('userInfo').style.display = 'none';
+        document.getElementById('emergencyServices').style.display = 'none';
+        document.getElementById('serviceInfo').style.display = 'none';
+      }
+    });
+  </script>
+
+
+  <script>
+    async function fetchUserDetails() {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        document.getElementById('loginLink').style.display = 'block'; // Show login link
+        document.getElementById('userInfo').style.display = 'none'; // Hide user info
+        return;
+      }
+
+      try {
+        const response = await fetch('/user-details', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch user details');
+        }
+
+        const user = await response.json();
+        document.getElementById('userName').textContent = `Name: ${user.name}`;
+        document.getElementById('userEmail').textContent = `Email: ${user.email}`;
+        document.getElementById('userInitial').textContent = user.name.charAt(0).toUpperCase(); // Set the initial letter
+        document.getElementById('loginLink').style.display = 'none'; // Hide login link
+        document.getElementById('userInfo').style.display = 'flex'; // Show user info
+      } catch (error) {
+        console.error('Error fetching user details:', error);
+        document.getElementById('loginLink').style.display = 'block'; // Show login link
+        document.getElementById('userInfo').style.display = 'none'; // Hide user info
+      }
+    }
+
+
+
+    function toggleDropdown() {
+      const dropdown = document.getElementById('userDropdown');
+      const isVisible = dropdown.style.display === 'block';
+      dropdown.style.display = isVisible ? 'none' : 'block';
+    }
+
+    function toggleServiceDropdown() {
+      var dropdown = document.getElementById('serviceDropdown');
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', async function (event) {
+      event.preventDefault();  // Prevent the default form submission
+
+      // Get form data
+      const formData = new FormData(this);
+
+      // Create an object from the form data
+      const formObject = {};
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+
+      // Send the form data using fetch
+      try {
+        const response = await fetch('/send_message', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formObject)
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+          showSuccessMessage(result.message);
+        } else {
+          showErrorMessage(result.error);
+        }
+      } catch (error) {
+        showErrorMessage(`An unexpected error occurred: ${error.message}`);
+      }
+    });
+
+    function showSuccessMessage(message) {
+      const messageContainer = document.getElementById('message-container');
+      messageContainer.innerHTML = `<div class="alert alert-success">${message}</div>`;
+    }
+
+    function showErrorMessage(message) {
+      const messageContainer = document.getElementById('message-container');
+      messageContainer.innerHTML = `<div class="alert alert-danger">${message}</div>`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('success') && params.get('success') === 'true') {
+        showSuccessMessage();
+      }
+    });
+
+    function showSuccessMessage() {
+      const alertContainer = document.getElementById('alert-container');
+      const alertDiv = document.createElement('div');
+      alertDiv.classList.add('alert', 'alert-success');
+      alertDiv.textContent = 'Message sent successfully!';
+      alertContainer.appendChild(alertDiv);
+
+      // Optionally, remove the alert after a few seconds
+      setTimeout(function () {
+        alertDiv.remove();
+      }, 5000); // Remove after 5 seconds
+    }
+
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("upButton").style.display = "block";
+      } else {
+        document.getElementById("upButton").style.display = "none";
+      }
+    }
+
+    document.getElementById("upButton").onclick = function () {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    };
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+
+    fetchUserDetails(); // Fetch user details on page load
+
+
+  </script>
+
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <div id="google_translate_element"></div>
+  <script>
+    async function fetchUserDetails() {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        document.getElementById('loginLink').style.display = 'block'; // Show login link
+        document.getElementById('userInfo').style.display = 'none'; // Hide user info
+        return;
+      }
+
+      try {
+        const response = await fetch('/user-details', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch user details');
+        }
+
+        const user = await response.json();
+        document.getElementById('userName').textContent = `Name: ${user.name}`;
+        document.getElementById('userEmail').textContent = `Email: ${user.email}`;
+
+        // Set the user's initials
+        const initials = user.name.split(' ').map(name => name.charAt(0)).join('').toUpperCase();
+        document.getElementById('userInitial').textContent = initials;
+
+        document.getElementById('loginLink').style.display = 'none'; // Hide login link
+        document.getElementById('userInfo').style.display = 'flex'; // Show user info
+      } catch (error) {
+        console.error('Error fetching user details:', error);
+        document.getElementById('loginLink').style.display = 'block'; // Show login link
+        document.getElementById('userInfo').style.display = 'none'; // Hide user info
+      }
+    }
+
+    fetchUserDetails(); // Fetch user details on page load
+
+
+
+
+  </script>
+
+
+  <script>
+    async function logout() {
+      try {
+        // Perform the logout request
+        await fetch('/logout', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        });
+
+        // Remove the token from localStorage
+        localStorage.removeItem('token');
+
+        // Remove the userInfo div from the DOM
+        const userInfo = document.getElementById('userInfo');
+        if (userInfo) {
+          userInfo.parentNode.removeChild(userInfo); // Remove the userInfo element
+        }
+
+        // Redirect to login page
+        window.location.href = '/'; // Redirect to login page
+      } catch (error) {
+        console.error('Error during logout:', error);
+      }
+    }
+
+    function toggleEmergencyServicesDropdown() {
+      const dropdown = document.getElementById("emergencyServicesDropdown");
+      if (dropdown) {
+        console.log("Emergency Services dropdown found:", dropdown);
+        dropdown.classList.toggle("show");
+      } else {
+        console.error("Emergency Services dropdown not found");
+      }
+    }
+  </script>
+
+  <script>
+    // Function to check login status and update the UI
+    function checkLoginStatus() {
+      const token = localStorage.getItem('token');
+
+      if (token) {
+        document.getElementById('loginTab').style.display = 'none';
+        document.getElementById('userInfo').style.display = 'block';
+      } else {
+        document.getElementById('loginTab').style.display = 'block';
+        document.getElementById('userInfo').style.display = 'none';
+      }
+    }
+
+    // Call this function when the page loads
+    window.onload = checkLoginStatus;
+
+    // Function to handle logout
+    function logout() {
+      // Clear the stored token
+      localStorage.removeItem('token');
+
+      // Optionally, clear other user information
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userEmail');
+
+      // Redirect to the index page
+      window.location.href = '/';
+    }
+  </script>
+
+</body>
+
+</html>
