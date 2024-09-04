@@ -1,0 +1,66 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #FF4B2B;
+    color: white;
+    padding: 50px 20px; /* Increased top padding to push content further down */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+header h1 {
+   /* Increased top margin to push the content further down within the header */
+    font-size: 2.5em;
+    line-height: 1.2;
+}
+
+
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    margin-bottom: 40px;
+    overflow: hidden; /* Ensures the container adapts to floated elements */
+}
+
+.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #FF4B2B;
+    text-align: left;
+}
+
+.section img {
+    float: right;
+    margin-left: 20px;
+    width: 300px; /* Adjust width as needed */
+    height: auto;
+    border-radius: 10px;
+}
+
+.section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-align: justify; /* Justifies the text for a cleaner look */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+

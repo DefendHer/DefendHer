@@ -1,0 +1,329 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background color */
+    color: #212529; /* Dark text color for readability */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 80px; /* Adjust height as needed */
+    text-align: center;
+    position: relative;
+    background-attachment: fixed; /* Optional: Keeps the background image fixed during scroll */
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+header h1 {
+    margin: 0;
+    color: #ec4512; /* Highlight color */
+    font-size: 3.5em;
+    position: relative;
+    z-index: 1;
+    padding-top: 150px; /* Adjust based on your header height */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow for better readability */
+}
+
+.content-section {
+    padding: 60px 20px;
+    margin-bottom: 60px;
+    background-color: #ffffff; /* Light background for content sections */
+    border-radius: 8px; /* Rounded corners */
+    color: #212529; /* Dark text color */
+}
+
+.content-section h2 {
+    color: #ec4512; /* Highlight color for headings */
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.content-section p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+.content-section img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.who-we-are-section,
+.mission-section,
+.how-we-can-help-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.who-we-are-section img,
+.mission-section img,
+.how-we-can-help-section img {
+    max-width: 100%;
+    height: auto;
+    max-width: 450px;
+}
+
+.who-we-are-text,
+.mission-text,
+.how-we-can-help-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.mission-text h3 {
+    color: #ec4512; /* Highlight color for sub-headings */
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Container for the card section */
+.team-section {
+    display: flex;
+    gap: 20px; /* Space between cards */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if necessary */
+    justify-content: center; /* Centers cards horizontally */
+    margin-bottom: 60px;
+}
+
+/* Individual card styling */
+.card {
+    width: 300px; /* Increased width */
+    height: 400px; /* Increased height */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Ensures content stays within the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    position: relative; /* For positioning the overlay */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling and shadow effect on hover */
+    background: #ffffff; /* Light background color */
+    color: #212529; /* Dark text color */
+    margin: 15px; /* Margin for spacing */
+    display: inline-block; /* Aligns cards in a row */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0px 15px 30px rgba(80, 80, 80, 0.2); /* Deepen shadow on hover */
+}
+
+/* Image styling */
+.card-img {
+    height: 60%; /* 60% of the card height */
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(to top, #ff7e7e, #ffce7e); /* Gradient background */
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Center the image */
+    transition: transform 0.3s; /* Smooth transform effect on hover */
+    z-index: 2;
+}
+
+/* Social media icons list */
+.social-media {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    transform: translateY(-6em); /* Position above the card */
+    z-index: 3;
+    gap: 10px; /* Space between icons */
+}
+
+.social-media li {
+    background: #ffffff; /* Light background for icons */
+    display: inline-flex;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0; /* Hidden by default */
+    transition: all 0.3s ease-in; /* Smooth transition effect */
+}
+
+.social-media a {
+    color: #212529; /* Dark icon color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icons */
+.icon {
+    width: 24px; /* Icon size */
+    height: 24px; /* Icon size */
+}
+
+/* Card info styling */
+.card-info {
+    padding: 15px;
+    text-align: center; /* Center text */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    color: #212529; /* Dark text color */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.card-info .title {
+    font-size: 18px; /* Title font size */
+    font-weight: bold;
+}
+
+.card-info .subtitle {
+    font-size: 14px; /* Subtitle font size */
+    letter-spacing: 1px;
+}
+
+/* Hovers */
+.card:hover .card-img {
+    transform: translateY(-5em); /* Moves the image up on hover */
+}
+
+.card:hover .social-media li {
+    transform: translateY(-5%); /* Moves icons up on hover */
+    opacity: 1; /* Show icons on hover */
+}
+
+.card:hover .social-media li:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.card:hover .social-media li:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.card:hover .social-media li:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+footer {
+    background-color: #ffffff; /* Light background color */
+    color: #212529; /* Dark text color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .who-we-are-section,
+    .mission-section,
+    .how-we-can-help-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .who-we-are-section img,
+    .mission-section img,
+    .how-we-can-help-section img {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .who-we-are-text,
+    .mission-text,
+    .how-we-can-help-text {
+        padding: 0;
+    }
+
+    .team-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Heading for Team Section */
+.team-heading {
+    color: #ec4512; /* Highlight color */
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+.section {
+    padding: 60px 0;
+}
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.team-card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.team-card .card-img-top {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+.team-card .card-body {
+    padding: 20px;
+}
+.card-img-top {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+.section {
+    padding: 60px 0;
+}
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.team-card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.team-card .card-img-top {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+.team-card .card-body {
+    padding: 20px;
+}
+.card-img-top {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+/* CSS for image hover effect */
+.img-hover {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.img-hover:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    filter: brightness(85%); /* Darken the image slightly */
+}
