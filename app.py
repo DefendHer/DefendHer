@@ -492,7 +492,7 @@ def generate_routes_map(start_coords, end_coords, routes, police_station_image):
             location=station,
             popup='Police Station',
             icon=folium.CustomIcon(
-                icon_image=police_station_image if police_station_image else 'static\images\police-badge.png',
+                icon_image=police_station_image if police_station_image else 'static/images/police-badge.png',
                 icon_size=(30, 30)
             )
         ).add_to(route_map)
