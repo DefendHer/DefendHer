@@ -1,109 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emotion Detector</title>
+    <title>Real-Time Emotion Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #videoFeed {
+            border: 5px solid #333;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<style>
-/* General reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #f7f9fc; /* Light and clean background */
-    color: #2c3e50; /* Dark contrast text color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-/* Main container styling */
-.container {
-    background: #ffffff; /* Pure white background */
-    padding: 40px;
-    border-radius: 12px; /* Softer border radius */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    text-align: center;
-    width: 90%;
-    max-width: 800px;
-    border: 1px solid #e0e0e0; /* Light grey border */
-}
-
-/* Header styling */
-h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #e74c3c; /* Accent color for the header */
-}
-
-/* Video container */
-.video-container {
-    border-radius: 8px; /* Soft border radius */
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    background: #ecf0f1; /* Light grey background for contrast */
-    margin-bottom: 20px;
-}
-
-#videoElement {
-    width: 100%;
-    height: auto;
-}
-
-/* Button styling */
-button {
-    background-color: #e74c3c; /* Primary button color */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 20px; /* Smooth round button */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
-    margin-top: 15px;
-}
-
-button:hover {
-    background-color: #c0392b; /* Darker shade on hover */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
-}
-
-/* Footer styling (optional) */
-footer {
-    margin-top: 20px;
-    font-size: 0.85rem;
-    color: #7f8c8d; /* Muted text color */
-}
-
-footer a {
-    color: #e74c3c; /* Accent color for links */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #c0392b; /* Darker shade on hover */
-}
-
-</style>
 <body>
-    <div class="container">
-        <h1>Emotion Detector</h1>
-        <div class="video-container">
-            <img src="{{ url_for('video_feed') }}" id="videoElement">
-        </div>
-
+    <h1>Real-Time Emotion Detection</h1>
+    <div>
+        <img id="videoFeed" src="{{ url_for('videos') }}" width="640" height="480">
     </div>
 </body>
-
 </html>
